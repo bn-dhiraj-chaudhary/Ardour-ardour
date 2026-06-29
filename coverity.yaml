@@ -1,7 +1,7 @@
 capture:
-  build:
-    clean-command: ''
-    build-command: ''
+ # build:
+ #   clean-command: ''
+ #   build-command: ''
   config:
     language: python
   files:
