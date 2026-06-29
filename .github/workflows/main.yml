@@ -71,4 +71,4 @@ jobs:
         # coverity_clean_command: mvn -B clean
         
         ### OPTIONAL DIAGNOSTICS: Upload logs as build artifact if true
-        include_diagnostics: false
+        include_diagnostics: true
