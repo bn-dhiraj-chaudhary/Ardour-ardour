@@ -1,7 +1,9 @@
 capture:
   build:
-    clean-command: 'mvn -B -f pom.xml clean'
-    build-command: 'mvn -B -f pom.xml install'
+    clean-command: ''
+    build-command: ''
+  config:
+    language: python
   files:
     exclude-regex: '(node_modules|bower_components|vendor)'
 analyze:
