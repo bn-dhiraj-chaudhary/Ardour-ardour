@@ -42,7 +42,7 @@ jobs:
         polaris_assessment_types: "SCA,SAST"
         
         ### SCANNING OPTIONAL
-        polaris_application_name: quickstart-${{ github.event.repository.name }}
+        # polaris_application_name: quickstart-${{ github.event.repository.name }}
         
         ### SCANNING OPTIONAL: Pull Request comments
         polaris_prComment_enabled: true
