@@ -31,7 +31,7 @@ jobs:
 
     # Step 4: Run your Python script
     - name: Execute Python script
-      run: python main.py
+      run: python script.py
   
     - name: Polaris Code Scanner
       uses: sukot1/polaris-codescanner@v0.01
