@@ -40,6 +40,11 @@ jobs:
         polaris_server_url: https://poc.polaris.blackduck.com
         polaris_access_token: jrgodvf36h0gncgq430cc0htnl86o8vpdc44ghdjulhbvfm4ctknff00hudrg18fgok7cpd0qldnk
         polaris_assessment_types: "SCA,SAST"
+
+        polaris_application_name: Mio
+        polaris_project_name: Ardour/ardour       # ← Project name     
+        polaris_branch_name: master                  # ← Branch name     
+        polaris_branch_parent_name: master
         
         ### SCANNING OPTIONAL
         # polaris_application_name: quickstart-${{ github.event.repository.name }}
