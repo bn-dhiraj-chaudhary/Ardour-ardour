@@ -33,10 +33,37 @@ jobs:
     - name: Execute Python script
       run: python script.py
   
-    - name: Polaris Code Scanner
-      uses: sukot1/polaris-codescanner@v0.01
+    - name: Polaris Scan
+      uses: blackduck-inc/black-duck-security-scan@v2
       with:
-          POLARIS_SERVER_URL: https://poc.polaris.blackduck.com
-          POLARIS_ACCESS_TOKEN: jrgodvf36h0gncgq430cc0htnl86o8vpdc44ghdjulhbvfm4ctknff00hudrg18fgok7cpd0qldnk
-          POLARIS_PROJECT_NAME: Ardour-ardour
-          POLARIS_PROJECT_BRANCH: master
+        ### SCANNING: Required fields
+        polaris_server_url: https://poc.polaris.blackduck.com
+        polaris_access_token: jrgodvf36h0gncgq430cc0htnl86o8vpdc44ghdjulhbvfm4ctknff00hudrg18fgok7cpd0qldnk
+        polaris_assessment_types: "SCA,SAST"
+        
+        ### SCANNING OPTIONAL
+        polaris_application_name: quickstart-${{ github.event.repository.name }}
+        
+        ### SCANNING OPTIONAL: Pull Request comments
+        polaris_prComment_enabled: true
+        
+        ### SCANNING OPTIONAL: GitHub Issues
+        polaris_externalIssues_create: true
+
+        ### SCANNING OPTIONAL: Fix Pull Requests
+        polaris_fixpr_enabled: true
+
+        ### GITHUB Token
+        # Required when Pull Request comments, Fix Pull Requests or GitHub issues are enabled
+        github_token: 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
+
+        ### ENABLE OPTIONAL SCAN REPORTS
+        polaris_reports_sarif_create: true
+        polaris_upload_sarif_report: true
+        
+        ### COVERITY BUILD COMMANDS (uncomment and configure for compiled languages)
+        # coverity_build_command: mvn -B -DskipTests package
+        # coverity_clean_command: mvn -B clean
+        
+        ### OPTIONAL DIAGNOSTICS: Upload logs as build artifact if true
+        include_diagnostics: false
